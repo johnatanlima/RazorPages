@@ -19,7 +19,19 @@ namespace MyPages.Pages
 
         public void OnGet()
         {
+        }
 
+        public static List<string> lista()
+        {
+            List<string> list = new List<string>();
+
+            for(int i = 0; i < 10; i++)
+            {
+                list.Add($"Elemento {i} da lista");
+              
+            }
+
+            return list;
         }
     }
 }

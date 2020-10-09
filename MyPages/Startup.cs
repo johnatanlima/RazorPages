@@ -50,6 +50,8 @@ namespace MyPages
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+
+                
             });
         }
     }
