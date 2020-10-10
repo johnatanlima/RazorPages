@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using MyPages.Hubs;
 using Microsoft.EntityFrameworkCore;
 using MyPages.Data;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace MyPages
 {
@@ -25,12 +27,22 @@ namespace MyPages
             services.AddSignalR();
 
             services.AddDbContext<MyPagesContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MyPagesContext")));
+                    options.UseMySql(Configuration.GetConnectionString("myConn")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Definindo a cultura padrão: pt-BR
+            var supportedCultures = new[] { new CultureInfo("pt-BR") };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(culture: "pt-BR", uiCulture: "pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
