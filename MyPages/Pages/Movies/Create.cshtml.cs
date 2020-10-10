@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyPages.Data;
+using MyPages.Models;
 
 namespace MyPages.Pages.Movies
 {
@@ -20,7 +21,7 @@ namespace MyPages.Pages.Movies
         }
 
         [BindProperty]
-        public Movies Movies { get; set; }
+        public MoviesModel Movies { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.

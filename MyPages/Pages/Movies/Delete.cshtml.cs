@@ -12,7 +12,7 @@ namespace MyPages.Pages.Movies
 {
     public class DeleteModel : PageModel
     {
-        private readonly MyPages.Data.MyPagesContext _context;
+        private readonly MyPagesContext _context;
 
         public DeleteModel(MyPages.Data.MyPagesContext context)
         {
@@ -20,7 +20,7 @@ namespace MyPages.Pages.Movies
         }
 
         [BindProperty]
-        public Movies Movies { get; set; }
+        public MoviesModel Movies { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -13,15 +13,15 @@ namespace MyPages.Pages.Movies
 {
     public class EditModel : PageModel
     {
-        private readonly MyPages.Data.MyPagesContext _context;
+        private readonly MyPagesContext _context;
 
-        public EditModel(MyPages.Data.MyPagesContext context)
+        public EditModel(MyPagesContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-        public Movies Movies { get; set; }
+        public MoviesModel Movies { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -39,8 +39,6 @@ namespace MyPages.Pages.Movies
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

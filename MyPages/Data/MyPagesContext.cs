@@ -10,6 +10,6 @@ namespace MyPages.Data
         {
         }
 
-        public DbSet<Movies> Movies { get; set; }
+        public DbSet<MoviesModel> Movies { get; set; }
     }
 }
