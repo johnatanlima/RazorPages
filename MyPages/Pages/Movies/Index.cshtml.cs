@@ -21,6 +21,8 @@ namespace MyPages.Pages.Movies
         public async Task OnGetAsync()
         {
             Movies = await _context.Movies.ToListAsync();
+
+            ViewData["Detalhe"] = "Detalhe da mensagem indo para view!";
         }
     }
 }
