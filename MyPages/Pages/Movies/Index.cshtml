@@ -10,6 +10,16 @@
 <p>
     <a asp-page="Create">Criar novo filme</a>
 </p>
+<form>
+    <p>
+        <select asp-for="Genero" asp-items="Model.ListaGeneros">
+            <option value="">Todos</option>
+        </select>
+
+        Título: <input type="text" asp-for="StrPesquisa" />
+        <input type="submit" value="Filtrar" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
