@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -20,9 +21,13 @@ namespace MyPages.Models
         [Display(Name = "Gênero")]
         public string Genre { get; set; }
 
+        [Column(TypeName = "decimal(18,2)")]
         [Display(Name = "Preço")]
         [DataType(DataType.Currency)]
         [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal Price { get; set; }
+
+        [Display(Name = "Avaliação")]
+        public string Rating { get; set; }
     }
 }
